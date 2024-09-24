@@ -7,6 +7,8 @@
   /*Шрифти*/
   --fontTextPrimary: "Montserrat", sans-serif;
   --fontTextSecondary: "Roboto", sans-serif;
+
+  /* Адаптив */
 }
 /*=======================GLOBAL=========================================*/
 body {
@@ -17,6 +19,7 @@ body {
 }
 .container {
   max-width: 1230px;
+  min-width: 320px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
@@ -40,7 +43,7 @@ img {
   align-items: center;
 }
 
-.logo-text {
+.logo {
   color: var(--colorTextTertiary);
   font-size: 30px;
   font-weight: 700;
@@ -55,6 +58,28 @@ img {
 }
 .nav-link:hover {
   color: var(--colorHover);
+}
+.header-menu {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  .header {
+    padding-bottom: 50px;
+  }
+}
+@media (max-width: 767px) {
+  .nav-list {
+    gap: 30px;
+  }
+}
+@media (max-width: 575px) {
+  .nav-list {
+    display: none;
+  }
+  .header-menu {
+    display: block;
+  }
 }
 /*========================SERVICES===============================================*/
 .services {
@@ -102,6 +127,54 @@ img {
   font-size: 15px;
   line-height: 1.47; /* 146.667% */
   padding-left: 57px;
+}
+@media (max-width: 1199px) {
+  .services-title {
+    margin-bottom: 85px;
+  }
+}
+@media (max-width: 991px) {
+  .services-title {
+    margin-bottom: 70px;
+  }
+  .services-list {
+    justify-content: center;
+    row-gap: 70px;
+  }
+  .services-item {
+    flex-basis: calc((100% - 70px) / 2);
+  }
+}
+@media (max-width: 767px) {
+  .services {
+    padding-bottom: 70px;
+  }
+  .services-title {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 575px) {
+  .services-title {
+    margin-bottom: 50px;
+  }
+  .services-title::after {
+    display: none;
+  }
+  .services-item {
+    flex-basis: 100%;
+  }
+  .service-heading {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-title {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+  .service-text {
+    padding-left: 0;
+    text-align: center;
+  }
 }
 /*========================TEAM===============================================*/
 .team {
@@ -152,6 +225,31 @@ img {
   font-style: italic;
   font-weight: 300;
 }
+@media (max-width: 991px) {
+  .team-title {
+    margin-bottom: 70px;
+  }
+  .team-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media (max-width: 767px) {
+  .team {
+    padding-bottom: 70px;
+  }
+  .team-title {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 575px) {
+  .teammete-name {
+    font-size: 2em;
+  }
+  .teammete-role {
+    font-size: 2em;
+  }
+}
 /*========================FOOTER===============================================*/
 .footer {
   padding-bottom: 10px;
@@ -190,4 +288,21 @@ img {
   font-variant: all-small-caps;
   padding: 12px 38px;
   background-color: var(--colorTextTertiary);
+}
+@media (max-width: 767px) {
+  .footer-container {
+    flex-direction: column-reverse;
+    gap: 30px;
+  }
+}
+@media (max-width: 575px) {
+  .subscribe {
+    flex-direction: column;
+    flex-grow: 1;
+    align-self: stretch;
+  }
+  .subscribe-mail {
+    border: 1px solid var(--colorTextSecondary);
+    border-bottom: 0;
+  }
 }
