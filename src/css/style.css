@@ -30,7 +30,10 @@ body {
   padding-top: 17px;
   padding-bottom: 80px;
 }
-
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
 .logo {
   color: var(--colorTextTertiary);
   font-size: 30px;
